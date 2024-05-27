@@ -1,0 +1,100 @@
+float theta = 0;
+PImage img;
+PImage planet1Tex;
+PImage planet2Tex;
+PImage planet3Tex;
+PImage planet4Tex;
+PImage planet5Tex;
+PImage planet6Tex;
+PImage planet7Tex;
+PImage planet8Tex;
+PImage planet9Tex;
+
+void setup() {
+  size(1000, 700);
+  img = loadImage("background.jpeg");
+  planet1Tex = loadImage("planet1.png");
+  planet2Tex = loadImage("planet2.png");
+  planet3Tex = loadImage("planet3.png");
+  planet4Tex = loadImage("planet4.png");
+  planet5Tex = loadImage("planet5.png");
+  planet6Tex = loadImage("planet6.png");
+  planet7Tex = loadImage("planet7.png");
+  planet8Tex = loadImage("planet8.png");
+  planet9Tex = loadImage("planet19.png");
+}
+
+void draw(){
+   image(img, 0, 0);
+  translate(width/2, height/2);
+//lingkaran putaran
+noFill();
+stroke(#FFFFFF);
+  ellipse(0,0,135,135);
+  ellipse(0,0,180,180);
+  ellipse(0,0,220,220);
+  ellipse(0,0,255,255);
+  ellipse(0,0,320,320);
+  ellipse(0,0,420,420);
+  ellipse(0,0,510,510);
+  ellipse(0,0,610,610);
+  ellipse(0,0,680,680);
+ 
+// Matahari
+  fill(#FCD700);
+  ellipse(0, 0, 100, 100);
+  image(planet1Tex, -50, -50, 100, 100);
+
+  // Play putaran
+  pushMatrix();
+  rotate(theta);
+
+  // Planet 1
+  translate(100, 0);
+  fill(#FF9F0D);
+  image(planet1Tex, -37, 0, 10, 10);
+
+  // Planet 2
+  translate(100, 0);
+  fill(#935B07);
+  image(planet2Tex, -190, 188, 15, 15);
+
+  // Planet 3
+  translate(100, 0);
+  fill(#04A0C9);
+  image(planet3Tex, -410, 0, 15,15);
+
+  // Planet 4
+  translate(100, 0);
+  fill(#DBB377);
+  image(planet4Tex, -340, 111, 10,10);
+
+  // Planet 5
+  translate(100, 0);
+  fill(#B26C02);
+  image(planet5Tex, -570, 142, 42,42);
+
+  // Planet 6
+  translate(100, 0);
+  fill(#DED709);
+  image(planet6Tex, -450, -150, 35,35 );
+
+  // Planet 7
+  translate(100, 0);
+  fill(#4A8098);
+  image(planet7Tex, -935, -100, 23,23);
+
+  // Planet 8
+  translate(100, 0);
+  fill(#0276AA);
+  image(planet8Tex, -510, 100, 21, 21);
+
+  // Planet 9
+  translate(100, 0);
+  fill(#01567C);
+  image(planet9Tex, -910, -340, 10,10);
+  
+  popMatrix();
+  theta += 0.01;
+ 
+}
